@@ -1,0 +1,11 @@
+************* Module kaooa_6
+kaooa_6.py:91:22: E1133: Non-iterable value Game.players is used in an iterating context (not-an-iterable)
+kaooa_6.py:101:22: E1133: Non-iterable value Game.players is used in an iterating context (not-an-iterable)
+kaooa_6.py:190:0: R0902: Too many instance attributes (9/7) (too-many-instance-attributes)
+kaooa_6.py:212:72: E1101: Module 'pygame' has no 'SRCALPHA' member (no-member)
+kaooa_6.py:250:32: E1101: Module 'pygame' has no 'MOUSEBUTTONDOWN' member (no-member)
+kaooa_6.py:253:34: E1101: Module 'pygame' has no 'MOUSEBUTTONUP' member (no-member)
+
+------------------------------------------------------------------
+Your code has been rated at 9.09/10 (previous run: 9.09/10, +0.00)
+
