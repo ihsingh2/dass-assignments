@@ -1,0 +1,8 @@
+************* Module Lucasinitial
+Lucasinitial.py:1:0: C0103: Module name "Lucasinitial" doesn't conform to snake_case naming style (invalid-name)
+Lucasinitial.py:16:10: W0622: Redefining built-in 'next' (redefined-builtin)
+Lucasinitial.py:28:0: C0103: Constant name "L_num" doesn't conform to UPPER_CASE naming style (invalid-name)
+
+------------------------------------------------------------------
+Your code has been rated at 7.69/10 (previous run: 7.69/10, +0.00)
+
