@@ -49,12 +49,29 @@ class TestKaprekarRoutine(unittest.TestCase):
         with self.assertRaises(ValueError):
             kaprekar_routine('1111')
 
-    def test_single_iteration_input(self):
+    def test_output_type(self):
+        """Tests if output is of string type."""
+        self.assertIsInstance(kaprekar_routine('6174'), str)
+
+    def test_output_coverage(self):
+        """Tests if output starts with input argument and ends with Kaprekar's constant."""
+
+        cases = ['4533', '8781', '3482', '0838', '9048']
+        kaprekar = '6174'
+
+        for input_arg in cases:
+            output = kaprekar_routine(input_arg)
+            first = output[:4]
+            last = output[-4:]
+            self.assertEqual(first, input_arg)
+            self.assertEqual(last, kaprekar)
+
+    def test_single_iteration(self):
         """Tests Kaprekar's routine on the trivial single iteration case."""
         output = kaprekar_routine('6174')
         self.assertEqual(output, '6174')
 
-    def test_less_iterations_input(self):
+    def test_less_iterations(self):
         """Tests Kaprekar's routine on input that terminate in five or less iterations."""
 
         cases = [
@@ -65,11 +82,11 @@ class TestKaprekarRoutine(unittest.TestCase):
             ('9357', '9357, 6174')
         ]
 
-        for input, expected_output in cases:
-            output = kaprekar_routine(input)
+        for input_arg, expected_output in cases:
+            output = kaprekar_routine(input_arg)
             self.assertEqual(output, expected_output)
-        
-    def test_more_iterations_input(self):
+
+    def test_more_iterations(self):
         """Tests Kaprekar's routine on input that terminate in more than five iterations."""
 
         cases = [
@@ -80,8 +97,8 @@ class TestKaprekarRoutine(unittest.TestCase):
             ('9610', '9610, 9441, 7992, 7173, 6354, 3087, 8352, 6174')
         ]
 
-        for input, expected_output in cases:
-            output = kaprekar_routine(input)
+        for input_arg, expected_output in cases:
+            output = kaprekar_routine(input_arg)
             self.assertEqual(output, expected_output)
 
 if __name__ == '__main__':
