@@ -19,7 +19,7 @@ def kaprekar_routine(numstr: str) -> str:
         raise ValueError('Argument should be a string.')
 
     if not numstr.isnumeric():
-        raise ValueError('Argument should be numeric.')
+        raise ValueError('Argument should be a positive number.')
 
     if len(numstr) != 4:
         raise ValueError('Argument should be a four-digit number.')

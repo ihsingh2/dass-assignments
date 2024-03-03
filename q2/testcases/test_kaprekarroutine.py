@@ -12,41 +12,41 @@ class TestKaprekarRoutine(unittest.TestCase):
 
     def test_non_string_input(self):
         """Tests handling of non string input."""
-        with self.assertRaises(ValueError):
+        with self.assertRaisesRegex(ValueError, '^Argument should be a string.$'):
             kaprekar_routine(1234)
 
     def test_non_numeric_input(self):
         """Tests handling of non-numeric string input."""
-        with self.assertRaises(ValueError):
+        with self.assertRaisesRegex(ValueError, '^Argument should be a positive number.$'):
             kaprekar_routine('abcd')
 
     def test_negative_input(self):
         """Tests handling of negative input."""
-        with self.assertRaises(ValueError):
+        with self.assertRaisesRegex(ValueError, '^Argument should be a positive number.$'):
             kaprekar_routine('-987')
-        with self.assertRaises(ValueError):
+        with self.assertRaisesRegex(ValueError, '^Argument should be a positive number.$'):
             kaprekar_routine('-9876')
 
     def test_floating_point_input(self):
         """Tests handling of floating point input."""
-        with self.assertRaises(ValueError):
+        with self.assertRaisesRegex(ValueError, '^Argument should be a positive number.$'):
             kaprekar_routine('98.7')
-        with self.assertRaises(ValueError):
+        with self.assertRaisesRegex(ValueError, '^Argument should be a positive number.$'):
             kaprekar_routine('98.76')
 
     def test_short_input(self):
         """Tests handling of strings of length less than 4."""
-        with self.assertRaises(ValueError):
+        with self.assertRaisesRegex(ValueError, '^Argument should be a four-digit number.$'):
             kaprekar_routine('123')
 
     def test_long_input(self):
         """Tests handling of strings of length more than 4."""
-        with self.assertRaises(ValueError):
+        with self.assertRaisesRegex(ValueError, '^Argument should be a four-digit number.$'):
             kaprekar_routine('12345')
 
     def test_recurring_digit_input(self):
         """Tests handling of strings with no two distinct digits."""
-        with self.assertRaises(ValueError):
+        with self.assertRaisesRegex(ValueError, '^Argument must consist of at least two different digits.$'):
             kaprekar_routine('1111')
 
     def test_output_type(self):
