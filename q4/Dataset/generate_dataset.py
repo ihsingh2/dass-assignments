@@ -9,7 +9,7 @@ def generate_random_string(length: int):
     return ''.join(random.choice(letters) for i in range(length))
 
 if __name__ == '__main__':
-    filename = input('Enter the path for output file: ')
+    filename = input('Enter the output path: ')
     num_records = random.randrange(5, 15)
     num_values = random.randrange(3, 6)
 

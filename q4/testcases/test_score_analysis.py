@@ -44,6 +44,33 @@ def test_average_single_score():
 
     assert calculate_average(test_input) == expected_output
 
+def test_average_multiple_scores():
+    """Tests output of calculate_average on list of students with multiple subjects."""
+
+    test_input = [
+        {'name': 'wczvjkx', 'scores': [10.0, 70.0, 46.0, 46.0, 14.0]},
+        {'name': 'dmurtmdg', 'scores': [58.0, 74.0, 17.0, 62.0, 21.0]},
+        {'name': 'ynbzryi', 'scores': [62.0, 41.0, 49.0, 98.0, 87.0]},
+        {'name': 'clenvx', 'scores': [82.0, 28.0, 41.0, 24.0, 23.0]},
+        {'name': 'gdcvvd', 'scores': [11.0, 53.0, 42.0, 71.0, 87.0]},
+        {'name': 'ilhmwzkli', 'scores': [66.0, 63.0, 89.0, 46.0, 2.0]},
+        {'name': 'gkbcjins', 'scores': [42.0, 65.0, 6.0, 79.0, 6.0]},
+        {'name': 'mvxvxxr', 'scores': [36.0, 88.0, 59.0, 35.0, 55.0]}
+    ]
+
+    expected_output = {
+        'wczvjkx': 37.20,
+        'dmurtmdg': 46.40,
+        'ynbzryi': 67.40,
+        'clenvx': 39.60,
+        'gdcvvd': 52.80,
+        'ilhmwzkli': 53.20,
+        'gkbcjins': 39.60,
+        'mvxvxxr': 54.60
+    }
+
+    assert calculate_average(test_input) == expected_output
+
 def test_highest_score_bad_input():
     """Tests handling of bad input in find_highest_scorer."""
 
@@ -92,6 +119,27 @@ def test_highest_score_single_score():
     expected_output = (
         'mnop',
         ['mnop']
+    )
+
+    assert find_highest_scorer(test_input) == expected_output
+
+def test_highest_score_multiple_scores():
+    """Tests output of find_highest_scorer on list of students with multiple subjects."""
+
+    test_input = [
+        {'name': 'wczvjkx', 'scores': [10.0, 70.0, 46.0, 46.0, 14.0]},
+        {'name': 'dmurtmdg', 'scores': [58.0, 74.0, 17.0, 62.0, 21.0]},
+        {'name': 'ynbzryi', 'scores': [62.0, 41.0, 49.0, 98.0, 87.0]},
+        {'name': 'clenvx', 'scores': [82.0, 28.0, 41.0, 24.0, 23.0]},
+        {'name': 'gdcvvd', 'scores': [11.0, 53.0, 42.0, 71.0, 87.0]},
+        {'name': 'ilhmwzkli', 'scores': [66.0, 63.0, 89.0, 46.0, 2.0]},
+        {'name': 'gkbcjins', 'scores': [42.0, 65.0, 6.0, 79.0, 6.0]},
+        {'name': 'mvxvxxr', 'scores': [36.0, 88.0, 59.0, 35.0, 55.0]}
+    ]
+
+    expected_output = (
+        'ynbzryi',
+        ['clenvx', 'mvxvxxr', 'ilhmwzkli', 'ynbzryi', 'gdcvvd']
     )
 
     assert find_highest_scorer(test_input) == expected_output

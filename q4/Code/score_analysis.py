@@ -24,8 +24,8 @@ def calculate_average(students: list) -> dict:
                 averages[student['name']] = sum(student['scores']) / len(student['scores'])
             else:
                 averages[student['name']] = 0
-        except:
-            raise ValueError('Unable to parse the input.')
+        except Exception as exc:
+            raise ValueError('Unable to parse the input.') from exc
     return averages
 
 def find_highest_scorer(students: list) -> (str, list):
@@ -57,8 +57,8 @@ def find_highest_scorer(students: list) -> (str, list):
         for student in students:
             if num_subjects != len(student['scores']):
                 raise ValueError('All students are expected to have the same number of subjects.')
-    except:
-        raise ValueError('Unable to parse the input.')
+    except Exception as exc:
+        raise ValueError('Unable to parse the input.') from exc
 
     if num_subjects == 0:
         return '', []
@@ -124,7 +124,6 @@ def process_dataset(input_path: str) -> list:
         dataset.append({'name': name, 'scores': scores})
 
     file.close()
-    print(dataset)
     return dataset
 
 if __name__ == '__main__':
