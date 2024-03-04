@@ -28,8 +28,67 @@
   - Revision: Renamed variable 'next' to 'succ', and 'L_num' to 'L_NUM'.
   - Pending: Change module name 'Lucas_1' to snake_case.
 
-## Question 2 - Kaprekar Routine
+## Question 2 - Kaprekar's Routine
+
+- Steps to run the program
+
+```console
+cd q2/
+python Code/kaprekarroutine.py
+{Enter a four-digit number with at least two different digits:} 1122
+```
+
+- Steps to run the testcases
+
+```console
+cd q2/
+python testcases/test_kaprekarroutine.py
+```
+
+- Test cases covered: Non string input, non numeric input, negative input, floating point input, short input, long input, recurring digit input, output type check, inclusion of input and Kaprekar's constant in output, trivial single iteration termination, 5 or less iterations terminations, more than 5 iteration termination. 
 
 ## Question 3 - Palindrome
 
+- Steps to run the program
+
+```console
+cd q3/
+python Code/palindrome.py
+{Enter a year smaller than 9999:} 152
+```
+
+- Steps to run the testcases
+
+```console
+cd q3/
+pytest testcases/test_palindrome.py
+```
+
+- Test cases covered: Non integer input, out of bound input, invalid months, invalid days, invalid combinations, randomly sampled successful outputs.
+
 ## Question 4 - Student Scores
+
+- Steps to run the program
+
+```console
+cd q4/
+python Code/score_analysis.py
+{Enter the input path:} Dataset/data1.txt
+```
+
+- Steps to generate random datasets
+
+```console
+cd q4/
+python Dataset/generate_dataset.py
+{Enter the output path:} Dataset/new.txt
+```
+
+- Testcases are expected to be run from ``q4/`` directory, for the sake of relative file path.
+
+```console
+cd q4/
+pytest testcases/test_score_analysis.py
+```
+
+- Test cases covered: Bad input, degenerate input, trivial input, non-trivial input.
